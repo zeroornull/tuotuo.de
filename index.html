@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -7,7 +8,19 @@
           content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5, user-scalable=no">
     <title>tuotuo.de</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
-
+    <style>
+        #musicControl {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 24px;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
 <div class="zhezhao"></div>
@@ -24,8 +37,39 @@
             tuotuo.de. All Rights Reserved</a></dd>
     </dl>
 </div>
-<audio src="images/xiaomoli.mp3" autoplay="autoplay" loop="loop" id="audio"></audio>
+<audio src="images/xiaomoli.mp3" loop id="audio"></audio>
+<div id="musicControl">🔇</div>
 <div class="container">
 </div>
+
+<script>
+    const audio = document.getElementById('audio');
+    const musicControl = document.getElementById('musicControl');
+    let isPlaying = false;
+
+    audio.volume = 0; // 初始音量设为0
+
+    musicControl.addEventListener('click', function() {
+        if (isPlaying) {
+            audio.pause();
+            musicControl.textContent = '🔇';
+        } else {
+            audio.volume = 1; // 恢复音量
+            audio.play();
+            musicControl.textContent = '🔊';
+        }
+        isPlaying = !isPlaying;
+    });
+
+    // 在用户首次与页面交互时尝试播放音乐
+    document.body.addEventListener('click', function() {
+        if (!isPlaying) {
+            audio.play().then(() => {
+                isPlaying = true;
+                musicControl.textContent = '🔊';
+            }).catch(e => console.log("Autoplay prevented"));
+        }
+    }, { once: true });
+</script>
 </body>
 </html>
