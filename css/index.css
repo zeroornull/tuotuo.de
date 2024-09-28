@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { margin:0; padding:0; list-style-image: none;list-style-type: none;}
+html{
+	background-color: #000000;
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+img { border:none;}
+.fix {clear:both;height: 1px;font-size: 0px;}
+
+.zhezhao {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(2px);
+}
+
+.wxk_logo {
+	position: absolute;
+	top: 6%;
+	left: 4%;
+	width: 5%;
+	z-index:100;
+}
+.wxk_logo img {
+	width: 100%;
+}
+.wxk_logo a {
+	display: block;
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+}
+.wxk_logo a:hover {
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:0.70;
+}
+
+/* 标题动画 */
+@-webkit-keyframes title {
+	0% {opacity: 0;-webkit-transform: translateX(60px);}	
+	100% {opacity: 1;-webkit-transform: translateX(0);}
+}
+@keyframes title {
+	0% {opacity: 0;transform: translateX(60px);}	
+	100% {opacity: 1;transform: translateX(0);}
+} 
+.nr {
+	position: absolute;
+	bottom: 12%;
+	z-index: 100;
+	left: 4%;
+	overflow:hidden;
+}
+.nr dd.one {
+	font-family: "微软雅黑";
+	font-weight: bold;
+	font-size: 80px;
+	color: #FFFFFF;
+	padding-bottom: 15px;
+	-webkit-animation:'title' 1.5s 1;
+}
+.nr dd.two {
+	font-family: "微软雅黑";
+	font-size: 24px;
+	color: #FFFFFF;
+	padding-bottom: 15px;
+	-webkit-animation:'title' 3s 1;
+}
+
+.container {
+	position: absolute;
+	z-index: 50;
+	bottom: 10%;
+	right: 4%;
+	width: 12%;
+	text-align: center;
+}
+.container dd.one {
+	padding-bottom: 20px;
+}
+.container dd.two {
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+
+.copyright {
+	position: absolute;
+	bottom: 6%;
+	z-index: 100;
+	left: 4%;
+}
+.copyright dd.logo {
+	float: left;
+	padding-right: 20px;
+}
+.copyright dd.logo a {
+	text-decoration:none;
+	display: block;
+	height: 20px;
+	width: 120px;
+	background-image: url(../images/ngg_logo.svg);
+	background-repeat: no-repeat;
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:0.50;
+}
+.copyright dd.logo a:hover {
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:1;
+}
+.copyright dd.b {
+	height: 20px;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+.copyright dd.b a {
+	text-decoration:none;
+	color: #FFFFFF;
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:0.50;
+}
+.copyright dd.b a:hover {
+	text-decoration: none;
+	opacity:1;
+}
+.copyright_y {
+	position: absolute;
+	top: 6%;
+	z-index: 100;
+	right: 4%;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	line-height: 22px;
+	color: #FFFFFF;
+}
+.copyright_y a {
+	text-decoration:none;
+	color: #FFFFFF;
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+}
+.copyright_y a:hover {
+	text-decoration: none;
+	opacity:0.70;
+}
+
+@media screen and (max-width: 1200px) {
+.nr dd.one {font-size: 60px;}
+.nr dd.two {font-size: 18px;}
+}
+@media screen and (max-width: 600px) {
+html{background-position: 40% center;}
+/* 移动端LOGO动画 */
+@-webkit-keyframes wxk_logo {
+	0% {opacity: 0;-webkit-transform: translateY(-20px);}	
+	100% {opacity: 1;-webkit-transform: translateY(0);}
+}
+@keyframes wxk_logo {
+	0% {opacity: 0;transform: translateY(-20px);}	
+	100% {opacity: 1;transform: translateY(0);}
+} 
+.wxk_logo {top: 7%;left: 38%;width: 24%;-webkit-animation:'wxk_logo' 3s 1;}
+.copyright_y {display: none;}
+.nr {left: 6%;right: 6%;bottom: 7%;}
+.nr dd.one {font-size: 54px;padding-bottom: 5px;font-family: PingFangSC-bold;}
+.nr dd.two {font-size: 16px;line-height: 26px;font-family: PingFangSC-Light;}
+.container {display: none;}
+.copyright {left: 6%;bottom: 4%;}
+.copyright dd.logo {display: none;}
+.copyright dd.b {font-size: 10px;font-family: PingFangSC-Light;}
+}
